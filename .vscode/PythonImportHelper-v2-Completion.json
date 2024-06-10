@@ -1,0 +1,212 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "generate_total_revenue_by_tax_type",
+        "importPath": "scripts.sample_etl",
+        "description": "scripts.sample_etl",
+        "isExtraImport": true,
+        "detail": "scripts.sample_etl",
+        "documentation": {}
+    },
+    {
+        "label": "generate_total_renevue_by_location",
+        "importPath": "scripts.sample_etl_2",
+        "description": "scripts.sample_etl_2",
+        "isExtraImport": true,
+        "detail": "scripts.sample_etl_2",
+        "documentation": {}
+    },
+    {
+        "label": "generate_total_revenue",
+        "importPath": "scripts.sample_etl_3",
+        "description": "scripts.sample_etl_3",
+        "isExtraImport": true,
+        "detail": "scripts.sample_etl_3",
+        "documentation": {}
+    },
+    {
+        "label": "Minio",
+        "importPath": "minio",
+        "description": "minio",
+        "isExtraImport": true,
+        "detail": "minio",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "generate_total_revenue_by_tax_type",
+        "kind": 2,
+        "importPath": "scripts.sample_etl",
+        "description": "scripts.sample_etl",
+        "peekOfCode": "def generate_total_revenue_by_tax_type(df):\n    # Clean the column names to remove hidden characters or whitespace\n    df.columns = df.columns.str.strip().str.replace(\"\\u200b\", \"\")\n    # List of tax types and their corresponding cleaned column names in the original CSV\n    tax_columns = [\n        \"ពន្ធនាំចូល\",\n        \"អាករពិសេស\",\n        \"អាករលើ​តម្លៃ​បន្ថែម\",\n        \"អាករបន្ថែម​លើផលិតផលប្រេង\",\n        \"អាករនាំចេញ\",",
+        "detail": "scripts.sample_etl",
+        "documentation": {}
+    },
+    {
+        "label": "generate_total_renevue_by_location",
+        "kind": 2,
+        "importPath": "scripts.sample_etl_2",
+        "description": "scripts.sample_etl_2",
+        "peekOfCode": "def generate_total_renevue_by_location(df):\n    # Clean the column names to remove hidden characters or whitespace\n    df.columns = df.columns.str.strip().str.replace(\"\\u200b\", \"\")\n    # List of tax columns\n    tax_columns = [\n        \"ពន្ធនាំចូល\",\n        \"អាករពិសេស\",\n        \"អាករលើតម្លៃបន្ថែម\",\n        \"អាករបន្ថែមលើផលិតផលប្រេង\",\n        \"អាករនាំចេញ\",",
+        "detail": "scripts.sample_etl_2",
+        "documentation": {}
+    },
+    {
+        "label": "generate_total_revenue",
+        "kind": 2,
+        "importPath": "scripts.sample_etl_3",
+        "description": "scripts.sample_etl_3",
+        "peekOfCode": "def generate_total_revenue(df, previous_cumulative: int):\n    df.columns = df.columns.str.strip().str.replace(\"\\u200b\", \"\")\n    # list of tax columns\n    tax_columns = [\n        \"ពន្ធនាំចូល\",\n        \"អាករពិសេស\",\n        \"អាករលើតម្លៃបន្ថែម\",\n        \"អាករបន្ថែមលើផលិតផលប្រេង\",\n        \"អាករនាំចេញ\",\n        \"ចំណូលផ្សេងៗ\",",
+        "detail": "scripts.sample_etl_3",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    response = client.get_object('gdce', 'raw-revenue-data/revenue_data_jan_2024.csv')\n    df = pd.read_csv(BytesIO(response.data))\n    previous_cumulative = 1000000\n    generate_total_revenue(df, previous_cumulative)\n    generate_total_renevue_by_location(df)\n    generate_total_revenue_by_tax_type(df)\nif __name__ == \"__main__\":\n    main()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "client = Minio(\n    endpoint=\"localhost:9000\",\n    access_key=\"minio\",\n    secret_key=\"minio123\",\n    secure=False\n)\ndef main():\n    response = client.get_object('gdce', 'raw-revenue-data/revenue_data_jan_2024.csv')\n    df = pd.read_csv(BytesIO(response.data))\n    previous_cumulative = 1000000",
+        "detail": "main",
+        "documentation": {}
+    }
+]
